@@ -8,7 +8,7 @@ udp_server_socket.bind(server_address)
 
 for i in range(10):
     data, address = udp_server_socket.recvfrom(BUFFER_SIZE)
-    print(f"Messaggio ricevuto: {data.decode('utf8')} da {address}")
+    print(f"Messaggio ricevuto: {data.decode('utf-8')} da {address}")
 
 udp_server_socket.sendto("Messaggi ricevuti!!!".encode("utf-8"), address)
 udp_server_socket.close()
