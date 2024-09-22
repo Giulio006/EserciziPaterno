@@ -8,7 +8,7 @@ BUFFER_SIZE = 4092
 print("*************************\nChat Client-Server: scrivi <arrivederci> per interrompere la connessione\n*************************\n\n")
 
 while True:
-    messaggio = input("Manda un messaggio al server ():    ")
+    messaggio = input("Manda un messaggio al server:    ")
     udp_client_socket.sendto(messaggio.encode('utf-8'), server_address)
 
     if(messaggio.lower() == "arrivederci"):
