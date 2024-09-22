@@ -2,7 +2,7 @@ import socket as s
 
 udp_client_socket = s.socket(s.AF_INET, s.SOCK_DGRAM)
 
-server_address = ("192.168.1.15", 6980)
+server_address = ("192.168.199.179", 6980)
 BUFFER_SIZE = 4092
 
 for i in range(10):
