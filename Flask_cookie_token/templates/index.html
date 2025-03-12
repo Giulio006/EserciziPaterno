@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaBot Controller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 20px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>AlphaBot Controller</h1>
+    <button onclick="sendCommand('forward')">Forward</button><br>
+    <button onclick="sendCommand('left')">Left</button>
+    <button onclick="sendCommand('stop')">Stop</button>
+    <button onclick="sendCommand('right')">Right</button><br>
+    <button onclick="sendCommand('backward')">Backward</button>
+
+    <script>
+        function sendCommand(cmd) {
+            fetch('/command', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `cmd=${cmd}`
+            });
+        }
+    </script>
+</body>
+</html>
